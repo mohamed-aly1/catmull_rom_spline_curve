@@ -11,29 +11,35 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Catmull-Rom Curve  
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Now You can Draw Fitted Curves easily just using points Offsets.
+
+![Alt text](<Simulator Screenshot - iPhone 12 - 2023-10-09 at 20.44.27.png>)
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+using CatmullCurve.drawCurve() Function that will return a CustomPaint waiting to be placed inside your "Constrained Sized" Widget
+## Constrains
+
+Required : 
+-List of Offset "points of the curve",
+-Color  "Curve color"
+-double "Curve Stroke Width"
+-PaintingStyle "Define Curve Style",
+
+Optional : 
+-bool drawPoints "If you want to draw the points of your curve, Set this to true" 
+-double? pointsStrokeWidth "Specify the stroke width of your points, Default set to 2x Curve Stroke Width "
+-Color pointcolor "Specify the points color, Default set to Red"
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+ `/example` f
 
-```dart
-const like = 'sample';
-```
+`
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.

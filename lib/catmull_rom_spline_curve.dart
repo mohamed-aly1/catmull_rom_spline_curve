@@ -5,27 +5,28 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class CatmullCurve {
-  static CustomPaint drawCurve(Offset p1, Offset p2, Offset p3, Color color,
-      double strokeWidth, PaintingStyle style,
-      {bool drawPoints = false, double? pointsStrokeWidth}) {
+  static CustomPaint drawCurve(
+      List<Offset> points, Color color, double strokeWidth, PaintingStyle style,
+      {bool drawPoints = false,
+      double? pointsStrokeWidth,
+      Color pointcolor = Colors.red}) {
     return CustomPaint(
         painter: CurvePainter(
-            p1: p1,
-            p2: p2,
-            p3: p3,
+            points: points,
             color: color,
             strokeWidth: strokeWidth,
             style: style,
             drawPoints: drawPoints,
+            pointcolor: pointcolor,
             pointsStrokeWidth: pointsStrokeWidth ?? strokeWidth * 2));
   }
 }
 
 class CurvePainter extends CustomPainter {
-  final Offset p1;
-  final Offset p2;
-  final Offset p3;
+  final List<Offset> points;
+
   final Color color;
+  final Color pointcolor;
   final double strokeWidth;
   final PaintingStyle style;
   final bool drawPoints;
@@ -33,10 +34,9 @@ class CurvePainter extends CustomPainter {
 
   CurvePainter({
     super.repaint,
-    required this.p1,
-    required this.p2,
-    required this.p3,
+    required this.points,
     required this.color,
+    required this.pointcolor,
     required this.strokeWidth,
     required this.style,
     required this.drawPoints,
@@ -46,36 +46,69 @@ class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final path = Path();
-    final Offset p1Spline = p1;
-    final Offset p2Spline = p1 - ((p1 - p2) / 6);
-    final Offset p3Spline = p2 - ((p3 - p1) / 6);
-    final Offset p4Spline = p2;
-    final Offset p5Spline = p2;
-    final Offset p6Spline = p2 + ((p3 - p1) / 6);
-    final Offset p7Spline = p3 - ((p3 - p2) / 6);
-    final Offset p8Spline = p3;
 
-    final paint = Paint();
-    paint.color = color;
-    paint.strokeWidth = strokeWidth;
-    paint.style = style;
+    for (int i = 0; i < points.length - 1; i++) {
+      Offset p1;
+      Offset p2;
+      Offset p3;
 
-    final pointsPaint = Paint();
-    pointsPaint.color = color;
-    pointsPaint.strokeWidth = pointsStrokeWidth;
-    pointsPaint.style = style;
-    pointsPaint.strokeCap = StrokeCap.round;
+      Offset p1Spline;
+      Offset p2Spline;
+      Offset p3Spline;
+      Offset p4Spline;
+      if (points.length < 3) {
+        p1 = points[i];
+        p2 = points[i + 1];
+        p3 = points[i];
+        p1Spline = p1;
+        p2Spline = p1;
+        p3Spline = p2;
+        p4Spline = p2;
+      } else if (i == 0) {
+        p1 = points[i];
+        p2 = points[i + 1];
+        p3 = points[i + 2];
+        p1Spline = p1;
+        p2Spline = p1 - ((p1 - p2) / 6);
+        p3Spline = p2 - ((p3 - p1) / 6);
+        p4Spline = p2;
+      } else if (i == points.length - 1) {
+        p1 = points[i - 1];
+        p2 = points[i];
+        p3 = points[i + 1];
+        p1Spline = p2;
+        p2Spline = p2 + ((p2 - p1) / 6);
+        p3Spline = p3 - ((p3 - p2) / 6);
+        p4Spline = p3;
+      } else {
+        p1 = points[i - 1];
+        p2 = points[i];
+        p3 = points[i + 1];
+        p1Spline = p2;
+        p2Spline = p2 + ((p2 - p1) / 6);
+        p3Spline = p3 - ((p3 - p1) / 6);
+        p4Spline = p3;
+      }
 
-    path.moveTo(p1Spline.dx, p1Spline.dy);
-    path.cubicTo(p2Spline.dx, p2Spline.dy, p3Spline.dx, p3Spline.dy,
-        p4Spline.dx, p4Spline.dy);
-    path.moveTo(p5Spline.dx, p5Spline.dy);
-    path.cubicTo(p6Spline.dx, p6Spline.dy, p7Spline.dx, p7Spline.dy,
-        p8Spline.dx, p8Spline.dy);
+      final paint = Paint();
+      paint.color = color;
+      paint.strokeWidth = strokeWidth;
+      paint.style = style;
 
-    canvas.drawPath(path, paint);
-    if (drawPoints == true) {
-      canvas.drawPoints(PointMode.points, [p1, p2, p3], pointsPaint);
+      final pointsPaint = Paint();
+      pointsPaint.color = pointcolor;
+      pointsPaint.strokeWidth = pointsStrokeWidth;
+      pointsPaint.style = style;
+      pointsPaint.strokeCap = StrokeCap.round;
+
+      path.moveTo(p1Spline.dx, p1Spline.dy);
+      path.cubicTo(p2Spline.dx, p2Spline.dy, p3Spline.dx, p3Spline.dy,
+          p4Spline.dx, p4Spline.dy);
+
+      canvas.drawPath(path, paint);
+      if (drawPoints == true) {
+        canvas.drawPoints(PointMode.points, points, pointsPaint);
+      }
     }
   }
 
