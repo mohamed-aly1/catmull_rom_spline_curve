@@ -1,7 +1,7 @@
 name: catmull_rom_spline_curve
 description: A new Flutter package to help drawing Curves using Catmull-Rom Interpolation.
 version: 0.0.1
-homepage:
+homepage: https://github.com/mohamed-aly1/catmull_rom_spline_curve
 
 environment:
   sdk: '>=3.1.0 <4.0.0'
