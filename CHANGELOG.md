@@ -1,3 +1,3 @@
 ## 1.0.1
 
-* First Release
+* First Release Update
