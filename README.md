@@ -21,7 +21,9 @@ and the Flutter guide for
 
 
 ## Features
+Now You can Draw Fitted Curves easily just using points Offsets.
 
+## Screenshot
 
 <img src="https://i.ibb.co/Mkc2N32/Simulator-Screenshot-i-Phone-12-2023-10-09-at-20-44-27.png" width="250" />
 
