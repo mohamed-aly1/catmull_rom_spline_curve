@@ -24,8 +24,8 @@ and the Flutter guide for
 
 Now You can Draw Fitted Curves easily just using points Offsets.
 
-![Alt text](![Simulator-Screenshot-i-Phone-12-2023-10-09-at-20-44-27](https://github.com/mohamed-aly1/catmull_rom_spline_curve/assets/113307754/2930db53-3331-4c89-819e-40c4a6b02121)
-)
+![Alt text](https://github.com/mohamed-aly1/catmull_rom_spline_curve/assets/113307754/2930db53-3331-4c89-819e-40c4a6b02121)
+
 
 ## Getting started
 
