@@ -76,3 +76,5 @@ Optional :
 
 ## Additional information
 - [API Documentation](https://pub.dev/documentation/catmull_rom_spline_curve/latest/catmull_rom_spline_curve/catmull_rom_spline_curve-library.html)
+- [Publisher LinkedIn](https://www.linkedin.com/in/moaly2001/)
+- [Publisher mail](mailto:moaly909@gmail.com)
