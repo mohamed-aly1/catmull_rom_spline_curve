@@ -14,7 +14,7 @@ and the Flutter guide for
 # Catmull-Rom Curve  
 [![pub package](https://img.shields.io/pub/v/battery_plus.svg)](https://pub.dev/packages/battery_plus)
 [![pub points](https://img.shields.io/pub/points/battery_plus?color=2E8B57&label=pub%20points)](https://pub.dev/packages/battery_plus/score)
-[![catmull_rom_spline_curve](https://github.com/fluttercommunity/plus_plugins/actions/workflows/battery_plus.yaml/badge.svg)](https://github.com/mohamed-aly1/catmull_rom_spline_curve/commit/d3718ec46bb89350759b438cb3565b9c8e203b3c)
+[![catmull_rom_spline_curve](https://github.com/mohamed-aly1/catmull_rom_spline_curve/actions/runs/9811717707)](https://github.com/mohamed-aly1/catmull_rom_spline_curve/actions/runs/9811717707)
 
 
 ## Platform Support
