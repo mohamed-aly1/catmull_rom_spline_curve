@@ -23,8 +23,8 @@ and the Flutter guide for
 ## Features
 
 Now You can Draw Fitted Curves easily just using points Offsets.
-<img src="https://github.com/mohamed-aly1/catmull_rom_spline_curve/assets/113307754/2930db53-3331-4c89-819e-40c4a6b02121" width="100" height="100"/>
-![Catmull Curve Screenshot](|width=20)
+<img src="https://i.ibb.co/Mkc2N32/Simulator-Screenshot-i-Phone-12-2023-10-09-at-20-44-27.png" width="250" height="300"/>
+
 
 
 ## Getting started
