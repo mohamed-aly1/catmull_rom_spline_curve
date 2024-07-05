@@ -13,16 +13,24 @@ and the Flutter guide for
 
 # Catmull-Rom Curve  
 
+## Platform Support
+
+| Android | iOS | MacOS | Web | Linux | Windows |
+| :-----: | :-: | :---: | :-: | :---: | :----: |
+|   ✅    | ✅  |  ✅   | ✅  |  ✅   |   ✅   |
+
+
 ## Features
 
 Now You can Draw Fitted Curves easily just using points Offsets.
 
-![Alt text](https://i.ibb.co/Mkc2N32/Simulator-Screenshot-i-Phone-12-2023-10-09-at-20-44-27.png)
+![Alt text](![Simulator-Screenshot-i-Phone-12-2023-10-09-at-20-44-27](https://github.com/mohamed-aly1/catmull_rom_spline_curve/assets/113307754/2930db53-3331-4c89-819e-40c4a6b02121)
+)
 
 ## Getting started
 
 using CatmullCurve.drawCurve() Function that will return a CustomPaint waiting to be placed inside your **Constrained Sized** Widget
-## Constrains
+## Constraints
 
 Required : 
 -List of Offset "points of the curve",
@@ -37,9 +45,9 @@ Optional :
 
 ## Usage
 
- 1 - Import the Packacge "import 'package:catmull_rom_spline_curve/catmull_rom_spline_curve.dart';"
+ 1 - Import the Package "import 'package:catmull_rom_spline_curve/catmull_rom_spline_curve.dart';"
 
- 2- Inside your Constrained Sized Widget, Call the function CatmullCurve.drawCurve() With the corrosponding parameters
+ 2- Inside your Constrained Sized Widget, Call the function CatmullCurve.drawCurve() With the corresponding parameters
 
  3- Voila!
 
@@ -64,4 +72,4 @@ Optional :
 ```
 
 ## Additional information
-
+- [API Documentation](https://pub.dev/documentation/catmull_rom_spline_curve/latest/catmull_rom_spline_curve/catmull_rom_spline_curve-library.html)
