@@ -4,9 +4,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-// The catmull curve class
+/// The catmull curve class 
 class CatmullCurve {
-// drawCurve static function to be called through a class object
+/// drawCurve static function to be called through a class object
   static CustomPaint drawCurve(
       List<Offset> points, Color color, double strokeWidth, PaintingStyle style,
       {bool drawPoints = false,
@@ -24,7 +24,7 @@ class CatmullCurve {
   }
 }
 
-// CurvePainter Class that extends Flutter Custom Painter to do the Graphics part
+/// CurvePainter Class that extends Flutter Custom Painter to do the Graphics part
 class CurvePainter extends CustomPainter {
   final List<Offset> points;
   final Color color;
@@ -46,6 +46,7 @@ class CurvePainter extends CustomPainter {
   });
 
   @override
+  /// CurvePainter Paint Function
   void paint(Canvas canvas, Size size) {
     final path = Path();
 
